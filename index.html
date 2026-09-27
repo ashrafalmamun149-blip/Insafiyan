@@ -3,467 +3,362 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#176b3a">
 
-  <title>Insafiyan Organic Shop | খাঁটি ও বিশ্বস্ত পণ্য</title>
+  <title>Insafiyan Organic Shop</title>
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    body{
+    body {
       font-family: Arial, "Noto Sans Bengali", sans-serif;
-      background:#f7f8f3;
-      color:#222;
-      line-height:1.6;
+      background: #f6f8f2;
+      color: #183b22;
     }
 
-    a{
-      text-decoration:none;
+    /* ===== HEADER ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
     }
 
-    /* TOP BAR */
-    .topbar{
-      background:#0e4d2b;
-      color:white;
-      text-align:center;
-      padding:7px 10px;
-      font-size:13px;
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      min-height: 75px;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
     }
 
-    /* HEADER */
-    header{
-      background:white;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      box-shadow:0 2px 12px rgba(0,0,0,.08);
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #185c2a;
+      font-weight: bold;
+      font-size: 18px;
     }
 
-    .nav{
-      max-width:1150px;
-      margin:auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:12px 18px;
+    .brand img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+      border-radius: 50%;
     }
 
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
+    nav {
+      display: flex;
+      gap: 18px;
     }
 
-    .logo-icon{
-      width:44px;
-      height:44px;
-      border-radius:50%;
-      background:#176b3a;
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:bold;
-      font-size:17px;
+    nav a {
+      text-decoration: none;
+      color: #214a2b;
+      font-weight: 600;
+      font-size: 15px;
     }
 
-    .logo h2{
-      color:#176b3a;
-      font-size:20px;
-      line-height:1.1;
+    nav a:hover {
+      color: #e68a19;
     }
 
-    .logo small{
-      color:#777;
-      font-size:11px;
-    }
-
-    nav a{
-      color:#333;
-      margin-left:18px;
-      font-size:14px;
-      font-weight:bold;
-    }
-
-    nav a:hover{
-      color:#176b3a;
-    }
-
-    /* HERO */
-    .hero{
-      min-height:520px;
-      display:flex;
-      align-items:center;
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
       background:
-        linear-gradient(90deg,rgba(7,53,28,.94),rgba(20,95,51,.76)),
-        url("https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1600&q=80");
-      background-size:cover;
-      background-position:center;
-      color:white;
+        radial-gradient(circle at 85% 30%, rgba(82,139,57,.30), transparent 32%),
+        linear-gradient(135deg, #edf6e7, #cfe5bf 55%, #f5ead3);
     }
 
-    .hero-content{
-      width:100%;
-      max-width:1150px;
-      margin:auto;
-      padding:60px 20px;
-    }
-
-    .badge{
-      display:inline-block;
-      background:#f1c75b;
-      color:#173c25;
-      padding:7px 14px;
-      border-radius:50px;
-      font-weight:bold;
-      font-size:13px;
-      margin-bottom:15px;
-    }
-
-    .hero h1{
-      font-size:48px;
-      max-width:650px;
-      line-height:1.25;
-      margin-bottom:15px;
-    }
-
-    .hero h1 span{
-      color:#ffd96a;
-    }
-
-    .hero p{
-      max-width:600px;
-      font-size:17px;
-      color:#f1f1f1;
-      margin-bottom:25px;
-    }
-
-    .btn{
-      display:inline-block;
-      background:#f2c94c;
-      color:#183e27;
-      padding:13px 22px;
-      border-radius:8px;
-      font-weight:bold;
-      margin-right:8px;
-      margin-bottom:8px;
-    }
-
-    .btn-outline{
-      background:transparent;
-      color:white;
-      border:1px solid rgba(255,255,255,.8);
-    }
-
-    /* FEATURES */
-    .features{
-      max-width:1100px;
-      margin:-40px auto 0;
-      position:relative;
-      padding:0 18px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:15px;
-    }
-
-    .feature{
-      background:white;
-      padding:22px 15px;
-      text-align:center;
-      border-radius:12px;
-      box-shadow:0 8px 25px rgba(0,0,0,.08);
-    }
-
-    .feature .icon{
-      font-size:30px;
-    }
-
-    .feature h3{
-      color:#176b3a;
-      margin:7px 0 3px;
-      font-size:17px;
-    }
-
-    .feature p{
-      color:#777;
-      font-size:13px;
-    }
-
-    /* SECTIONS */
-    section{
-      padding:75px 18px;
-    }
-
-    .container{
-      max-width:1150px;
-      margin:auto;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:35px;
-    }
-
-    .section-title span{
-      color:#b38222;
-      font-size:13px;
-      font-weight:bold;
-    }
-
-    .section-title h2{
-      color:#174c2c;
-      font-size:32px;
-      margin-top:5px;
-    }
-
-    .section-title p{
-      color:#777;
-      max-width:600px;
-      margin:7px auto;
-    }
-
-    /* PRODUCTS */
-    .products{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-    }
-
-    .product{
-      background:white;
-      border-radius:14px;
-      overflow:hidden;
-      box-shadow:0 5px 18px rgba(0,0,0,.07);
-      transition:.25s;
-    }
-
-    .product:hover{
-      transform:translateY(-5px);
-    }
-
-    .product-image{
-      height:190px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:75px;
-      background:#f1f5e9;
-    }
-
-    .product-info{
-      padding:18px;
-    }
-
-    .product-info h3{
-      color:#164d2b;
-      margin-bottom:5px;
-    }
-
-    .product-info p{
-      font-size:13px;
-      color:#777;
-      min-height:42px;
-    }
-
-    .order-btn{
-      display:block;
-      margin-top:14px;
-      text-align:center;
-      background:#176b3a;
-      color:white;
-      padding:10px;
-      border-radius:7px;
-      font-size:14px;
-      font-weight:bold;
-    }
-
-    /* ABOUT */
-    .about{
-      background:#edf4e9;
-    }
-
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:45px;
-      align-items:center;
-    }
-
-    .about-photo{
-      min-height:360px;
-      border-radius:18px;
+    /* Date-palm shadow effect */
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      right: -90px;
+      top: -150px;
       background:
-        linear-gradient(rgba(20,90,48,.12),rgba(20,90,48,.12)),
-        url("https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=900&q=80");
-      background-size:cover;
-      background-position:center;
+        repeating-linear-gradient(
+          125deg,
+          rgba(30,75,32,.10) 0px,
+          rgba(30,75,32,.10) 8px,
+          transparent 8px,
+          transparent 28px
+        );
+      transform: rotate(-18deg);
+      filter: blur(1px);
+      opacity: .75;
     }
 
-    .about-text h2{
-      font-size:35px;
-      color:#174c2c;
-      margin-bottom:12px;
+    .hero::after {
+      content: "🍉";
+      position: absolute;
+      right: 7%;
+      bottom: 20px;
+      font-size: 150px;
+      opacity: .16;
+      transform: rotate(-8deg);
     }
 
-    .about-text p{
-      color:#555;
-      margin-bottom:12px;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1150px;
+      width: 100%;
+      margin: auto;
+      padding: 70px 22px;
     }
 
-    .check{
-      margin-top:15px;
+    .hero-logo {
+      width: 105px;
+      height: 105px;
+      object-fit: contain;
+      background: white;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.15);
+      margin-bottom: 20px;
     }
 
-    .check div{
-      margin:8px 0;
-      font-weight:bold;
-      color:#285b39;
+    .hero h1 {
+      font-size: clamp(35px, 7vw, 65px);
+      line-height: 1.05;
+      color: #155c29;
+      margin-bottom: 15px;
     }
 
-    /* CTA */
-    .cta{
-      background:#155d35;
-      color:white;
-      text-align:center;
+    .hero p {
+      max-width: 620px;
+      font-size: 19px;
+      line-height: 1.7;
+      color: #35513a;
+      margin-bottom: 28px;
     }
 
-    .cta h2{
-      font-size:34px;
-      margin-bottom:10px;
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
-    .cta p{
-      margin-bottom:22px;
-      color:#e4eee8;
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .25s;
     }
 
-    /* CONTACT */
-    .contact-box{
-      background:white;
-      max-width:750px;
-      margin:auto;
-      border-radius:16px;
-      padding:30px;
-      box-shadow:0 6px 25px rgba(0,0,0,.07);
-      text-align:center;
+    .btn-primary {
+      background: #198a3b;
+      color: white;
+      box-shadow: 0 5px 15px rgba(25,138,59,.25);
     }
 
-    .contact-box h2{
-      color:#176b3a;
-      margin-bottom:10px;
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #116d2c;
     }
 
-    .phone{
-      font-size:24px;
-      color:#174c2c;
-      font-weight:bold;
-      margin:12px 0;
+    .btn-secondary {
+      background: white;
+      color: #185c2a;
+      border: 1px solid #b7cfb8;
     }
 
-    /* FOOTER */
-    footer{
-      background:#092f1c;
-      color:#ddd;
-      padding:35px 18px;
-      text-align:center;
+    /* ===== SECTION ===== */
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 70px 20px;
     }
 
-    footer h3{
-      color:#fff;
-      margin-bottom:5px;
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
     }
 
-    footer p{
-      font-size:13px;
-      color:#b8c9bf;
+    .section-title h2 {
+      font-size: 34px;
+      color: #185c2a;
+      margin-bottom: 8px;
     }
 
-    .copyright{
-      border-top:1px solid rgba(255,255,255,.12);
-      margin-top:20px;
-      padding-top:15px;
-      font-size:12px;
+    .section-title p {
+      color: #68766b;
     }
 
-    /* FLOATING WHATSAPP */
-    .whatsapp{
-      position:fixed;
-      right:18px;
-      bottom:20px;
-      width:58px;
-      height:58px;
-      border-radius:50%;
-      background:#25D366;
-      color:white;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:27px;
-      box-shadow:0 5px 15px rgba(0,0,0,.25);
-      z-index:999;
+    /* ===== PRODUCTS ===== */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
-    /* MOBILE */
-    @media(max-width:800px){
-      nav{
-        display:none;
+    .product {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+      transition: .25s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 28px rgba(0,0,0,.12);
+    }
+
+    .product-image {
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg,#eef7e9,#dbead0);
+      font-size: 75px;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #204d2b;
+    }
+
+    .product p {
+      color: #6a746b;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .order {
+      display: inline-block;
+      margin-top: 14px;
+      color: #148238;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      background: white;
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.06);
+      line-height: 1.9;
+      color: #4d5b50;
+    }
+
+    .about strong {
+      color: #185c2a;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-box {
+      text-align: center;
+      background: linear-gradient(135deg,#165d2b,#278443);
+      color: white;
+      border-radius: 25px;
+      padding: 50px 20px;
+      box-shadow: 0 10px 30px rgba(21,92,43,.22);
+    }
+
+    .contact-box h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      background: white;
+      color: #16843b;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #102b18;
+      color: #d8e4da;
+      text-align: center;
+      padding: 25px 15px;
+      line-height: 1.7;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 800px) {
+      nav {
+        gap: 9px;
       }
 
-      .hero{
-        min-height:480px;
+      nav a {
+        font-size: 12px;
       }
 
-      .hero h1{
-        font-size:35px;
+      .products {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .features{
-        grid-template-columns:1fr;
-        margin-top:-25px;
-      }
-
-      .products{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .about-grid{
-        grid-template-columns:1fr;
-      }
-
-      .about-photo{
-        min-height:280px;
-      }
-
-      .section-title h2{
-        font-size:27px;
+      .hero {
+        min-height: 570px;
       }
     }
 
-    @media(max-width:450px){
-      .products{
-        grid-template-columns:1fr 1fr;
-        gap:10px;
+    @media (max-width: 500px) {
+      .navbar {
+        flex-direction: column;
+        padding-bottom: 12px;
       }
 
-      .product-image{
-        height:145px;
-        font-size:55px;
+      nav {
+        width: 100%;
+        justify-content: center;
       }
 
-      .product-info{
-        padding:12px;
+      .hero-content {
+        text-align: center;
       }
 
-      .product-info h3{
-        font-size:15px;
+      .hero p {
+        font-size: 16px;
       }
 
-      .hero h1{
-        font-size:31px;
+      .buttons {
+        justify-content: center;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        padding: 25px;
       }
     }
   </style>
@@ -471,102 +366,190 @@
 
 <body>
 
-  <div class="topbar">
-    খাঁটি পণ্যের বিশ্বস্ত ঠিকানা • অর্ডার করুন WhatsApp-এ
-  </div>
-
+  <!-- HEADER -->
   <header>
-    <div class="nav">
-      <div class="logo">
-        <div class="logo-icon">IOS</div>
-        <div>
-          <h2>Insafiyan</h2>
-          <small>ORGANIC SHOP</small>
-        </div>
-      </div>
+    <div class="navbar">
+
+      <a href="#home" class="brand">
+        <img src="IMG-20260126-WA0002.jpg" alt="Insafiyan Organic Shop Logo">
+        <span>Insafiyan Organic Shop</span>
+      </a>
 
       <nav>
-        <a href="#home">হোম</a>
-        <a href="#products">পণ্যসমূহ</a>
-        <a href="#about">আমাদের সম্পর্কে</a>
-        <a href="#contact">যোগাযোগ</a>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
+
     </div>
   </header>
 
 
-  <section class="hero" id="home">
+  <!-- HERO -->
+  <div class="hero" id="home">
     <div class="hero-content">
 
-      <div class="badge">🌿 প্রকৃতির কাছ থেকে আপনার ঘরে</div>
+      <img
+        class="hero-logo"
+        src="IMG-20260126-WA0002.jpg"
+        alt="Insafiyan Organic Shop">
 
-      <h1>
-        বিশুদ্ধতার স্বাদ,
-        <span>বিশ্বাসের সাথে</span>
-      </h1>
+      <h1>Insafiyan<br>Organic Shop</h1>
 
       <p>
-        মধু, সরিষার তেল, চা-পাতা, ঘি, খেজুরসহ
-        নির্বাচিত মানসম্মত পণ্য পৌঁছে দিতে
-        Insafiyan Organic Shop প্রতিশ্রুতিবদ্ধ।
+        প্রকৃতির কাছ থেকে সরাসরি আপনার ঘরে—
+        খাঁটি, মানসম্মত ও বিশ্বস্ত খাদ্যপণ্য।
       </p>
 
-      <a class="btn" href="#products">
-        পণ্য দেখুন
-      </a>
+      <div class="buttons">
+        <a href="#products" class="btn btn-primary">
+          আমাদের পণ্য দেখুন
+        </a>
 
-      <a class="btn btn-outline"
-         href="https://wa.me/8801608365535"
-         target="_blank">
-        WhatsApp করুন
-      </a>
+        <a href="https://wa.me/8801608365535"
+           class="btn btn-secondary">
+          WhatsApp Order
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- PRODUCTS -->
+  <section id="products">
+
+    <div class="section-title">
+      <h2>আমাদের পণ্য</h2>
+      <p>প্রতিদিনের প্রয়োজনীয় নির্বাচিত খাদ্যপণ্য</p>
+    </div>
+
+    <div class="products">
+
+      <div class="product">
+        <div class="product-image">🍯</div>
+        <div class="product-info">
+          <h3>সুন্দরবনের প্রাকৃতিক মধু</h3>
+          <p>
+            প্রাকৃতিক চাকের খাঁটি মধু,
+            মৌয়ালদের কাছ থেকে সংগ্রহ করা।
+          </p>
+          <a class="order" href="https://wa.me/8801608365535">
+            অর্ডার করুন →
+          </a>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-image">🌿</div>
+        <div class="product-info">
+          <h3>সরিষার তেল</h3>
+          <p>
+            মানসম্মত সরিষা থেকে প্রস্তুত
+            সুগন্ধি ও স্বাদের তেল।
+          </p>
+          <a class="order" href="https://wa.me/8801608365535">
+            অর্ডার করুন →
+          </a>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-image">🍵</div>
+        <div class="product-info">
+          <h3>শ্রীমঙ্গলের চা</h3>
+          <p>
+            সিলেটের চায়ের স্বাদ ও সুবাস
+            আপনার প্রতিদিনের কাপের জন্য।
+          </p>
+          <a class="order" href="https://wa.me/8801608365535">
+            অর্ডার করুন →
+          </a>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-image">🧈</div>
+        <div class="product-info">
+          <h3>খাঁটি ঘি</h3>
+          <p>
+            রান্না ও খাবারের স্বাদ বাড়াতে
+            নির্বাচিত মানের ঘি।
+          </p>
+          <a class="order" href="https://wa.me/8801608365535">
+            অর্ডার করুন →
+          </a>
+        </div>
+      </div>
 
     </div>
   </section>
 
 
-  <div class="features">
+  <!-- ABOUT -->
+  <section id="about">
 
-    <div class="feature">
-      <div class="icon">🌿</div>
-      <h3>বাছাইকৃত পণ্য</h3>
-      <p>গুণগত মান বিবেচনায় পণ্য সংগ্রহ</p>
+    <div class="section-title">
+      <h2>আমাদের সম্পর্কে</h2>
+      <p>বিশ্বাস ও মান—আমাদের অঙ্গীকার</p>
     </div>
 
-    <div class="feature">
-      <div class="icon">🤝</div>
-      <h3>বিশ্বস্ত সেবা</h3>
-      <p>গ্রাহকের আস্থা আমাদের অগ্রাধিকার</p>
+    <div class="about">
+      <p>
+        <strong>Insafiyan Organic Shop</strong> একটি
+        বিশ্বস্ত অনলাইন খাদ্যপণ্যের উদ্যোগ।
+        আমরা চেষ্টা করি গ্রাহকের কাছে
+        মানসম্মত ও যতটা সম্ভব প্রাকৃতিক
+        খাদ্যপণ্য পৌঁছে দিতে।
+      </p>
+
+      <br>
+
+      <p>
+        আমাদের লক্ষ্য শুধু পণ্য বিক্রি নয়—
+        <strong>বিশ্বাসের সাথে দীর্ঘমেয়াদি সম্পর্ক তৈরি করা।</strong>
+      </p>
     </div>
 
-    <div class="feature">
-      <div class="icon">🚚</div>
-      <h3>ডেলিভারি সুবিধা</h3>
-      <p>অর্ডার অনুযায়ী পণ্য পৌঁছে দেওয়ার ব্যবস্থা</p>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="contact-box">
+
+      <h2>অর্ডার করতে যোগাযোগ করুন</h2>
+
+      <p>
+        আপনার পছন্দের পণ্য সম্পর্কে জানতে
+        অথবা অর্ডার করতে WhatsApp-এ যোগাযোগ করুন।
+      </p>
+
+      <a
+        class="whatsapp"
+        href="https://wa.me/8801608365535">
+        💬 WhatsApp: 01608365535
+      </a>
+
     </div>
 
-  </div>
+  </section>
 
 
-  <section id="products">
+  <!-- FOOTER -->
+  <footer>
 
-    <div class="container">
+    <p>
+      © 2026 Insafiyan Organic Shop
+    </p>
 
-      <div class="section-title">
-        <span>OUR PRODUCTS</span>
-        <h2>আমাদের জনপ্রিয় পণ্য</h2>
-        <p>
-          আপনার পরিবারের জন্য বাছাইকৃত মানসম্মত
-          খাদ্যপণ্য।
-        </p>
-      </div>
+    <p>
+      খাঁটি পণ্য • বিশ্বস্ত সেবা • ইনশাআল্লাহ
+    </p>
 
-      <div class="products">
+  </footer>
 
-        <div class="product">
-          <div class="product-image">🍯</div>
-          <div class="product-info">
-            <h3>সুন্দরবনের মধু</h3>
-            <p>সুন্দরবনের প্রাকৃতিক চাক থেকে সংগৃহীত মধু।</p>
-            <a class="order-btn"
-               target="_
+</body>
+</html>
