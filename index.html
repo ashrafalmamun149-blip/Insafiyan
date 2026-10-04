@@ -8,692 +8,949 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,"Noto Sans Bengali",sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-    background:#f7faf5;
-    color:#173b22;
-    line-height:1.6;
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+  background:#f6f8f3;
+  color:#222;
 }
 
-/* HEADER */
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:#ffffff;
-    box-shadow:0 2px 12px rgba(0,0,0,.10);
+  background:#28552d;
+  color:white;
+  padding:14px 18px;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
-.navbar{
-    max-width:1150px;
-    margin:auto;
-    padding:10px 18px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.header{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
-.logo-area{
-    display:flex;
-    align-items:center;
-    gap:10px;
+.logo{
+  font-size:21px;
+  font-weight:bold;
 }
 
-.logo-area img{
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    object-fit:cover;
+.cart-button{
+  border:0;
+  background:white;
+  color:#28552d;
+  padding:10px 15px;
+  border-radius:25px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.logo-text{
-    font-size:20px;
-    font-weight:bold;
-    color:#176b35;
-}
-
-nav a{
-    text-decoration:none;
-    color:#174b29;
-    margin-left:18px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#d28a00;
-}
-
-/* HERO */
 .hero{
-    min-height:480px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:50px 20px;
-    position:relative;
-    overflow:hidden;
-    background:linear-gradient(135deg,#eaf7e7,#fffdf2);
-}
-
-.hero:before{
-    content:"🌴";
-    position:absolute;
-    font-size:230px;
-    right:-30px;
-    bottom:-65px;
-    opacity:.10;
-    transform:rotate(-8deg);
-}
-
-.hero:after{
-    content:"🍉";
-    position:absolute;
-    left:15px;
-    bottom:10px;
-    font-size:90px;
-    opacity:.10;
-}
-
-.hero-content{
-    max-width:750px;
-    position:relative;
-    z-index:2;
-}
-
-.hero-logo{
-    width:115px;
-    height:115px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid white;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
-    margin-bottom:15px;
+  background:
+  linear-gradient(rgba(30,70,35,.72),rgba(30,70,35,.72)),
+  url("IMG-20260126-WA0002.jpg");
+  background-size:cover;
+  background-position:center;
+  color:white;
+  text-align:center;
+  padding:75px 20px;
 }
 
 .hero h1{
-    font-size:42px;
-    color:#12612e;
-    margin-bottom:10px;
+  font-size:38px;
+  margin-bottom:12px;
 }
 
 .hero p{
-    font-size:19px;
-    color:#45614b;
-    margin-bottom:25px;
-}
-
-.hero-btn{
-    display:inline-block;
-    background:#16833d;
-    color:white;
-    text-decoration:none;
-    padding:13px 25px;
-    border-radius:30px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.hero-btn:hover{
-    background:#0d5e2b;
-    transform:translateY(-2px);
-}
-
-/* SECTION */
-section{
-    padding:65px 18px;
+  font-size:18px;
 }
 
 .container{
-    max-width:1150px;
-    margin:auto;
+  max-width:1100px;
+  margin:auto;
+  padding:35px 15px;
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:35px;
+.title{
+  text-align:center;
+  color:#28552d;
+  margin-bottom:25px;
+  font-size:28px;
 }
 
-.section-title h2{
-    font-size:32px;
-    color:#14652f;
-}
-
-.section-title p{
-    color:#66756a;
-}
-
-/* PRODUCTS */
 .products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:22px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
 
-.product-card{
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 4px 18px rgba(0,0,0,.09);
-    transition:.3s;
-    border:1px solid #e7eee5;
+.product{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 3px 12px rgba(0,0,0,.10);
 }
 
-.product-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 25px rgba(0,0,0,.13);
-}
-
-.product-image{
-    height:220px;
-    background:#edf5e9;
-    overflow:hidden;
-}
-
-.product-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+.product img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
 }
 
 .product-info{
-    padding:18px;
+  padding:15px;
 }
 
-.product-info h3{
-    font-size:21px;
-    color:#185b2d;
-    margin-bottom:7px;
-}
-
-.description{
-    font-size:14px;
-    color:#68746b;
-    margin-bottom:12px;
-}
-
-.price-box{
-    background:#f1f8ed;
-    border-radius:12px;
-    padding:10px;
-    margin-bottom:15px;
+.product h3{
+  color:#28552d;
+  margin-bottom:8px;
 }
 
 .price{
-    display:flex;
-    justify-content:space-between;
-    padding:3px 0;
-    font-size:16px;
-    font-weight:bold;
+  font-weight:bold;
+  font-size:18px;
+  margin-bottom:12px;
 }
 
-.price span:last-child{
-    color:#d47b00;
+.add{
+  width:100%;
+  padding:12px;
+  border:0;
+  border-radius:8px;
+  background:#28552d;
+  color:white;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.order-btn{
-    display:block;
-    width:100%;
-    text-align:center;
-    background:#159447;
-    color:white;
-    text-decoration:none;
-    padding:11px;
-    border-radius:10px;
-    font-weight:bold;
-    transition:.3s;
+.add:hover{
+  background:#1d4022;
 }
 
-.order-btn:hover{
-    background:#0c6b31;
+/* CART */
+
+.cart{
+  position:fixed;
+  top:0;
+  right:-430px;
+  width:400px;
+  max-width:95%;
+  height:100vh;
+  background:white;
+  z-index:2000;
+  padding:20px;
+  box-shadow:-5px 0 20px rgba(0,0,0,.25);
+  overflow-y:auto;
+  transition:.3s;
 }
 
-/* ABOUT */
-.about{
-    background:#edf6e9;
+.cart.open{
+  right:0;
 }
 
-.about-box{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
+.cart-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
 }
 
-.about-box p{
-    color:#526257;
-    font-size:17px;
+.close{
+  width:35px;
+  height:35px;
+  border:0;
+  border-radius:50%;
+  cursor:pointer;
 }
 
-/* CONTACT */
-.contact-box{
-    max-width:700px;
-    margin:auto;
-    text-align:center;
-    background:white;
-    padding:35px 20px;
-    border-radius:20px;
-    box-shadow:0 4px 18px rgba(0,0,0,.08);
+.cart-item{
+  border-bottom:1px solid #ddd;
+  padding:13px 0;
 }
 
-.whatsapp{
-    display:inline-block;
-    margin-top:20px;
-    background:#25D366;
-    color:white;
-    padding:13px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
+.cart-name{
+  font-weight:bold;
+  margin-bottom:5px;
 }
 
-/* FOOTER */
+.quantity{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:8px;
+}
+
+.quantity button{
+  width:30px;
+  height:30px;
+  border:0;
+  border-radius:5px;
+  background:#28552d;
+  color:white;
+  cursor:pointer;
+}
+
+.delete{
+  background:#c62828 !important;
+}
+
+.total{
+  font-size:20px;
+  font-weight:bold;
+  margin:20px 0;
+}
+
+/* ORDER FORM */
+
+.order-form{
+  border-top:1px solid #ddd;
+  padding-top:20px;
+}
+
+.order-form h3{
+  color:#28552d;
+  margin-bottom:15px;
+}
+
+.order-form input,
+.order-form textarea,
+.order-form select{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border:1px solid #ccc;
+  border-radius:7px;
+  font-size:15px;
+}
+
+.order-form textarea{
+  height:80px;
+  resize:none;
+}
+
+.order-button{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:8px;
+  background:#25D366;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.empty{
+  text-align:center;
+  color:#777;
+  padding:25px 0;
+}
+
 footer{
-    background:#123d20;
-    color:white;
-    text-align:center;
-    padding:25px 15px;
+  background:#234524;
+  color:white;
+  text-align:center;
+  padding:30px 15px;
+  margin-top:40px;
 }
 
-footer p{
-    margin:4px 0;
-    font-size:14px;
-}
+@media(max-width:600px){
 
-/* MOBILE */
-@media(max-width:700px){
+  .logo{
+    font-size:17px;
+  }
 
-    .navbar{
-        padding:9px 12px;
-    }
+  .hero h1{
+    font-size:29px;
+  }
 
-    .logo-text{
-        font-size:16px;
-    }
+  .hero{
+    padding:55px 15px;
+  }
 
-    nav a{
-        margin-left:8px;
-        font-size:13px;
-    }
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
 
-    .hero{
-        min-height:430px;
-    }
+  .product img{
+    height:150px;
+  }
 
-    .hero h1{
-        font-size:30px;
-    }
+  .product-info{
+    padding:10px;
+  }
 
-    .hero p{
-        font-size:16px;
-    }
+  .product h3{
+    font-size:15px;
+  }
 
-    .hero-logo{
-        width:95px;
-        height:95px;
-    }
+  .price{
+    font-size:15px;
+  }
 
-    section{
-        padding:50px 14px;
-    }
-
-    .section-title h2{
-        font-size:27px;
-    }
-
-    .products{
-        grid-template-columns:1fr 1fr;
-        gap:13px;
-    }
-
-    .product-image{
-        height:150px;
-    }
-
-    .product-info{
-        padding:12px;
-    }
-
-    .product-info h3{
-        font-size:17px;
-    }
-
-    .description{
-        font-size:12px;
-    }
-
-    .price{
-        font-size:13px;
-    }
-
-    .order-btn{
-        font-size:13px;
-        padding:9px 5px;
-    }
-}
-
-@media(max-width:380px){
-    .products{
-        grid-template-columns:1fr;
-    }
+  .add{
+    font-size:13px;
+    padding:10px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-<div class="navbar">
 
-    <div class="logo-area">
-        <img src="IMG-20260126-WA0002.jpg" alt="Insafiyan Organic Shop Logo">
-        <div class="logo-text">Insafiyan Organic Shop</div>
-    </div>
+<div class="header">
 
-    <nav>
-        <a href="#home">হোম</a>
-        <a href="#products">পণ্য</a>
-        <a href="#about">আমাদের সম্পর্কে</a>
-        <a href="#contact">যোগাযোগ</a>
-    </nav>
+<div class="logo">
+🌿 Insafiyan Organic Shop
+</div>
+
+<button class="cart-button" onclick="openCart()">
+🛒 কার্ট (<span id="cartCount">0</span>)
+</button>
 
 </div>
+
 </header>
 
 
-<!-- HERO -->
-<section class="hero" id="home">
+<section class="hero">
 
-<div class="hero-content">
+<h1>Insafiyan Organic Shop</h1>
 
-    <img class="hero-logo"
-         src="IMG-20260126-WA0002.jpg"
-         alt="Insafiyan Organic Shop">
-
-    <h1>Insafiyan Organic Shop</h1>
-
-    <p>
-        প্রকৃতির কাছ থেকে আপনার ঘরে—
-        খাঁটি, মানসম্মত ও বিশ্বস্ত খাদ্যপণ্য।
-    </p>
-
-    <a href="#products" class="hero-btn">
-        🛍️ আমাদের পণ্য দেখুন
-    </a>
-
-</div>
+<p>খাঁটি ও মানসম্মত প্রাকৃতিক পণ্য</p>
 
 </section>
 
 
-<!-- PRODUCTS -->
-<section id="products">
-
 <div class="container">
 
-<div class="section-title">
-    <h2>আমাদের পণ্য</h2>
-    <p>খাঁটি পণ্য, সঠিক মূল্য ও বিশ্বস্ত সেবা</p>
-</div>
-
+<h2 class="title">
+আমাদের পণ্য
+</h2>
 
 <div class="products">
 
 
 <!-- HONEY -->
-<div class="product-card">
 
-<div class="product-image">
-<img src="1782971036940.jpg" alt="সুন্দরবনের প্রাকৃতিক মধু">
-</div>
+<div class="product">
 
-<div class="product-info">
-
-<h3>🍯 সুন্দরবনের প্রাকৃতিক মধু</h3>
-
-<p class="description">
-খাঁটি প্রাকৃতিক মধু, সরাসরি সংগ্রহ করা।
-</p>
-
-<div class="price-box">
-
-<div class="price">
-<span>৫০০ গ্রাম</span>
-<span>৳৮৫০</span>
-</div>
-
-<div class="price">
-<span>১ কেজি</span>
-<span>৳১,৬০০</span>
-</div>
-
-</div>
-
-<a class="order-btn"
-href="https://wa.me/8801608365535?text=আসসালামু%20আলাইকুম,%20আমি%20সুন্দরবনের%20প্রাকৃতিক%20মধু%20অর্ডার%20করতে%20চাই।"
-target="_blank">
-📱 WhatsApp অর্ডার
-</a>
-
-</div>
-</div>
-
-
-<!-- NATURAL HONEY -->
-<div class="product-card">
-
-<div class="product-image">
-<img src="Hany1.jpg" alt="খাঁটি প্রাকৃতিক মধু">
-</div>
+<img src="1782971036940.jpg">
 
 <div class="product-info">
 
-<h3>🍯 খাঁটি প্রাকৃতিক মধু</h3>
-
-<p class="description">
-স্বাদ ও মানে উৎকৃষ্ট প্রাকৃতিক মধু।
-</p>
-
-<div class="price-box">
+<h3>সুন্দরবনের প্রাকৃতিক মধু</h3>
 
 <div class="price">
-<span>৫০০ গ্রাম</span>
-<span>৳৮৫০</span>
+৳১৬০০ / ১ কেজি
 </div>
 
-<div class="price">
-<span>১ কেজি</span>
-<span>৳১,৬০০</span>
-</div>
+<button class="add"
+onclick="addToCart('সুন্দরবনের প্রাকৃতিক মধু',1600)">
+🛒 কার্টে যোগ করুন
+</button>
 
 </div>
 
-<a class="order-btn"
-href="https://wa.me/8801608365535?text=আসসালামু%20আলাইকুম,%20আমি%20খাঁটি%20প্রাকৃতিক%20মধু%20অর্ডার%20করতে%20চাই।"
-target="_blank">
-📱 WhatsApp অর্ডার
-</a>
-
-</div>
 </div>
 
 
-<!-- HONEY -->
-<div class="product-card">
+<!-- HONEY 500 -->
 
-<div class="product-image">
-<img src="Hony.jpg" alt="প্রাকৃতিক মধু">
-</div>
+<div class="product">
+
+<img src="Hany1.jpg">
 
 <div class="product-info">
 
-<h3>🍯 প্রাকৃতিক মধু</h3>
-
-<p class="description">
-প্রাকৃতিকভাবে সংগ্রহ করা সুস্বাদু মধু।
-</p>
-
-<div class="price-box">
+<h3>সুন্দরবনের মধু ৫০০ গ্রাম</h3>
 
 <div class="price">
-<span>৫০০ গ্রাম</span>
-<span>৳৮৫০</span>
+৳৮৫০
 </div>
 
-<div class="price">
-<span>১ কেজি</span>
-<span>৳১,৬০০</span>
-</div>
+<button class="add"
+onclick="addToCart('সুন্দরবনের মধু ৫০০ গ্রাম',850)">
+🛒 কার্টে যোগ করুন
+</button>
 
 </div>
 
-<a class="order-btn"
-href="https://wa.me/8801608365535?text=আসসালামু%20আলাইকুম,%20আমি%20প্রাকৃতিক%20মধু%20অর্ডার%20করতে%20চাই।"
-target="_blank">
-📱 WhatsApp অর্ডার
-</a>
-
-</div>
 </div>
 
 
 <!-- BLACK CUMIN HONEY -->
-<div class="product-card">
 
-<div class="product-image">
-<img src="Kalojira modu.jpg" alt="কালোজিরা মধু">
-</div>
+<div class="product">
+
+<img src="Hony.jpg">
 
 <div class="product-info">
 
-<h3>🖤 কালোজিরা মধু</h3>
-
-<p class="description">
-কালোজিরা ফুলের প্রাকৃতিক মধু।
-</p>
-
-<div class="price-box">
+<h3>কালোজিরা মধু ১ কেজি</h3>
 
 <div class="price">
-<span>৫০০ গ্রাম</span>
-<span>৳৯০০</span>
+৳১৮০০
 </div>
 
-<div class="price">
-<span>১ কেজি</span>
-<span>৳১,৮০০</span>
-</div>
+<button class="add"
+onclick="addToCart('কালোজিরা মধু ১ কেজি',1800)">
+🛒 কার্টে যোগ করুন
+</button>
 
 </div>
 
-<a class="order-btn"
-href="https://wa.me/8801608365535?text=আসসালামু%20আলাইকুম,%20আমি%20কালোজিরা%20মধু%20অর্ডার%20করতে%20চাই।"
-target="_blank">
-📱 WhatsApp অর্ডার
-</a>
-
-</div>
 </div>
 
 
 <!-- MUSTARD OIL -->
-<div class="product-card">
 
-<div class="product-image">
-<img src="Mustard oil.jpg" alt="খাঁটি সরিষার তেল">
-</div>
+<div class="product">
 
-<div class="product-info">
-
-<h3>🌿 খাঁটি সরিষার তেল</h3>
-
-<p class="description">
-মানসম্মত ও সুগন্ধি সরিষার তেল।
-</p>
-
-<div class="price-box">
-
-<div class="price">
-<span>১ কেজি</span>
-<span>৳১৭০</span>
-</div>
-
-<div class="price">
-<span>৫ কেজি</span>
-<span>৳১,৩০০</span>
-</div>
-
-</div>
-
-<a class="order-btn"
-href="https://wa.me/8801608365535?text=আসসালামু%20আলাইকুম,%20আমি%20সরিষার%20তেল%20অর্ডার%20করতে%20চাই।"
-target="_blank">
-📱 WhatsApp অর্ডার
-</a>
-
-</div>
-</div>
-
-
-<!-- OIL -->
-<div class="product-card">
-
-<div class="product-image">
-<img src="Oil.jpg" alt="সরিষার তেল">
-</div>
+<img src="Mustard oil.jpg">
 
 <div class="product-info">
 
-<h3>🌿 সরিষার তেল</h3>
-
-<p class="description">
-প্রতিদিনের রান্নার জন্য মানসম্মত তেল।
-</p>
-
-<div class="price-box">
+<h3>সরিষার তেল ১ কেজি</h3>
 
 <div class="price">
-<span>১ কেজি</span>
-<span>৳১৭০</span>
+৳১৭০
 </div>
+
+<button class="add"
+onclick="addToCart('সরিষার তেল ১ কেজি',170)">
+🛒 কার্টে যোগ করুন
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MUSTARD 5KG -->
+
+<div class="product">
+
+<img src="Oil.jpg">
+
+<div class="product-info">
+
+<h3>সরিষার তেল ৫ কেজি</h3>
 
 <div class="price">
-<span>৫ কেজি</span>
-<span>৳১,৩০০</span>
+৳১৩০০
 </div>
+
+<button class="add"
+onclick="addToCart('সরিষার তেল ৫ কেজি',1300)">
+🛒 কার্টে যোগ করুন
+</button>
 
 </div>
 
-<a class="order-btn"
-href="https://wa.me/8801608365535?text=আসসালামু%20আলাইকুম,%20আমি%20সরিষার%20তেল%20অর্ডার%20করতে%20চাই।"
-target="_blank">
-📱 WhatsApp অর্ডার
-</a>
-
-</div>
 </div>
 
 
 <!-- GHEE -->
-<div class="product-card">
 
-<div class="product-image">
-<img src="ghi.jpg" alt="খাঁটি ঘি">
-</div>
+<div class="product">
+
+<img src="ghi.jpg">
 
 <div class="product-info">
 
-<h3>🧈 খাঁটি ঘি</h3>
+<h3>খাঁটি ঘি ১ কেজি</h3>
 
-<p class="description">
-সুস্বাদু ও ঘ্রাণযুক্ত খাঁটি ঘ
+<div class="price">
+৳১৪০০
+</div>
+
+<button class="add"
+onclick="addToCart('খাঁটি ঘি ১ কেজি',1400)">
+🛒 কার্টে যোগ করুন
+</button>
+
+</div>
+
+</div>
+
+
+<!-- BLACK CUMIN 500 -->
+
+<div class="product">
+
+<img src="Kalojira modu.jpg">
+
+<div class="product-info">
+
+<h3>কালোজিরা মধু ৫০০ গ্রাম</h3>
+
+<div class="price">
+৳৯০০
+</div>
+
+<button class="add"
+onclick="addToCart('কালোজিরা মধু ৫০০ গ্রাম',900)">
+🛒 কার্টে যোগ করুন
+</button>
+
+</div>
+
+</div>
+
+
+<!-- TEA -->
+
+<div class="product">
+
+<img src="Tea.jpg">
+
+<div class="product-info">
+
+<h3>শ্রীমঙ্গলের চা পাতা ১ কেজি</h3>
+
+<div class="price">
+৳৪৮০
+</div>
+
+<button class="add"
+onclick="addToCart('শ্রীমঙ্গলের চা পাতা ১ কেজি',480)">
+🛒 কার্টে যোগ করুন
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CART -->
+
+<div class="cart" id="cart">
+
+<div class="cart-head">
+
+<h2>🛒 আপনার কার্ট</h2>
+
+<button class="close" onclick="closeCart()">
+✕
+</button>
+
+</div>
+
+
+<div id="cartItems"></div>
+
+
+<div class="total">
+
+পণ্যের মোট:
+৳<span id="subtotal">0</span>
+
+<br><br>
+
+ডেলিভারি:
+৳<span id="delivery">0</span>
+
+<br><br>
+
+সর্বমোট:
+৳<span id="grandTotal">0</span>
+
+</div>
+
+
+<!-- ORDER FORM -->
+
+<div class="order-form">
+
+<h3>📦 অর্ডারের তথ্য</h3>
+
+<input
+type="text"
+id="customerName"
+placeholder="আপনার নাম"
+>
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="মোবাইল নম্বর"
+>
+
+<textarea
+id="customerAddress"
+placeholder="সম্পূর্ণ ঠিকানা লিখুন"
+></textarea>
+
+
+<select id="deliveryArea" onchange="updateCart()">
+
+<option value="0">
+ডেলিভারি এলাকা নির্বাচন করুন
+</option>
+
+<option value="80">
+সিলেট শহর — ৳৮০
+</option>
+
+<option value="120">
+সিলেটের বাইরে — ৳১২০
+</option>
+
+<option value="150">
+সারা বাংলাদেশ — ৳১৫০
+</option>
+
+</select>
+
+
+<button
+class="order-button"
+onclick="sendOrder()">
+
+📲 WhatsApp-এ অর্ডার করুন
+
+</button>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<h3>
+Insafiyan Organic Shop
+</h3>
+
+<p>
+খাঁটি পণ্য • বিশ্বস্ত সেবা • হোম ডেলিভারি
+</p>
+
+<p>
+WhatsApp: 01608365535
+</p>
+
+</footer>
+
+
+<script>
+
+let cart = [];
+
+
+function addToCart(name,price){
+
+let existing =
+cart.find(item => item.name === name);
+
+if(existing){
+
+existing.qty++;
+
+}else{
+
+cart.push({
+name:name,
+price:price,
+qty:1
+});
+
+}
+
+updateCart();
+
+openCart();
+
+}
+
+
+function updateCart(){
+
+let items =
+document.getElementById("cartItems");
+
+let subtotal = 0;
+let count = 0;
+
+if(cart.length === 0){
+
+items.innerHTML =
+'<div class="empty">কার্ট এখনো খালি 🛒</div>';
+
+}else{
+
+items.innerHTML = "";
+
+cart.forEach((item,index)=>{
+
+subtotal += item.price * item.qty;
+
+count += item.qty;
+
+items.innerHTML += `
+
+<div class="cart-item">
+
+<div class="cart-name">
+${item.name}
+</div>
+
+<div>
+৳${item.price} × ${item.qty}
+</div>
+
+<div class="quantity">
+
+<button onclick="decrease(${index})">
+−
+</button>
+
+<span>
+${item.qty}
+</span>
+
+<button onclick="increase(${index})">
++
+</button>
+
+<button
+class="delete"
+onclick="removeItem(${index})">
+🗑
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+let delivery =
+Number(document.getElementById("deliveryArea").value);
+
+let grandTotal =
+subtotal + delivery;
+
+
+document.getElementById("cartCount").innerText =
+count;
+
+document.getElementById("subtotal").innerText =
+subtotal;
+
+document.getElementById("delivery").innerText =
+delivery;
+
+document.getElementById("grandTotal").innerText =
+grandTotal;
+
+}
+
+
+function increase(index){
+
+cart[index].qty++;
+
+updateCart();
+
+}
+
+
+function decrease(index){
+
+if(cart[index].qty > 1){
+
+cart[index].qty--;
+
+}else{
+
+cart.splice(index,1);
+
+}
+
+updateCart();
+
+}
+
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+updateCart();
+
+}
+
+
+function openCart(){
+
+document.getElementById("cart")
+.classList.add("open");
+
+}
+
+
+function closeCart(){
+
+document.getElementById("cart")
+.classList.remove("open");
+
+}
+
+
+function sendOrder(){
+
+if(cart.length === 0){
+
+alert("প্রথমে অন্তত একটি পণ্য কার্টে যোগ করুন।");
+
+return;
+
+}
+
+
+let name =
+document.getElementById("customerName").value.trim();
+
+let phone =
+document.getElementById("customerPhone").value.trim();
+
+let address =
+document.getElementById("customerAddress").value.trim();
+
+
+if(name === ""){
+
+alert("আপনার নাম লিখুন।");
+
+return;
+
+}
+
+
+if(phone === ""){
+
+alert("আপনার মোবাইল নম্বর লিখুন।");
+
+return;
+
+}
+
+
+if(address === ""){
+
+alert("আপনার সম্পূর্ণ ঠিকানা লিখুন।");
+
+return;
+
+}
+
+
+let area =
+document.getElementById("deliveryArea");
+
+if(area.value === "0"){
+
+alert("ডেলিভারি এলাকা নির্বাচন করুন।");
+
+return;
+
+}
+
+
+let delivery =
+Number(area.value);
+
+let subtotal = 0;
+
+let message =
+"আসসালামু আলাইকুম,%0A%0A";
+
+message +=
+"আমি Insafiyan Organic Shop থেকে অর্ডার করতে চাই।%0A%0A";
+
+message +=
+"👤 নাম: " + name + "%0A";
+
+message +=
+"📱 মোবাইল: " + phone + "%0A";
+
+message +=
+"📍 ঠিকানা: " + address + "%0A%0A";
+
+message +=
+"🛍️ অর্ডারের তালিকা:%0A";
+
+
+cart.forEach(item=>{
+
+let itemTotal =
+item.price * item.qty;
+
+subtotal += itemTotal;
+
+message +=
+"• " + item.name +
+" × " + item.qty +
+" = ৳" + itemTotal +
+"%0A";
+
+});
+
+
+let total =
+subtotal + delivery;
+
+
+message +=
+"%0Aপণ্যের মোট: ৳" +
+subtotal + "%0A";
+
+message +=
+"ডেলিভারি চার্জ: ৳" +
+delivery + "%0A";
+
+message +=
+"💰 সর্বমোট: ৳" +
+total + "%0A%0A";
+
+message +=
+"দয়া করে আমার অর্ডারটি কনফার্ম করুন।";
+
+
+let whatsapp =
+"https://wa.me/8801608365535?text=" +
+message;
+
+
+window.open(whatsapp,"_blank");
+
+}
+
+
+updateCart();
+
+</script>
+
+</body>
+</html>
